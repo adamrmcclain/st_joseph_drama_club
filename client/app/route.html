@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="static/images/sjdc_logo.jpg"/></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" style="padding-top:65px; padding-left:125px;">
+            <ul class="nav navbar-nav">
+                <li class="active"><a [routerLink]="['Home']">Home</a></li>
+                <li><a [routerLink]="['CurrentShow']">Current Show</a></li>
+                <li><a [routerLink]="['PastShows']">Past Shows</a></li>
+                <li><a [routerLink]="['CastAndCrew']">Cast & Crew</a></li>
+                <li><a [routerLink]="['CastAndCrew']">Current Officers</a></li>
+                <li><a href="http://www.stjosephcoldspring.com/">St Joseph's Parish</a></li>
+            </ul>
+            <div style="float:right">
+                <a href="http://twitter.com/home?status=http://www.stjosephcoldspring.com/news/2016/01/13/st-joseph-drama-club-production-2016.aspx" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.stjosephcoldspring.com/news/2016/01/13/st-joseph-drama-club-production-2016.aspx" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+<div class="container" style="padding-top: 125px;">
+
+    <div class="col-md-9">
+        <div class="jumbotron">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="sidebar-nav-fixed pull-right affix">
+            <div class="well">
+                <div class="fb-page" data-href="https://www.facebook.com/sjdramaclub/" data-tabs="timeline" data-small-header="false"
+                     data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-height="750px">
+                    <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/sjdramaclub/"><a href="https://www.facebook.com/sjdramaclub/">St. Joseph Drama Club</a></blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

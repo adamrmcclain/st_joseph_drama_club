@@ -1,0 +1,12 @@
+<h1>Past Shows</h1>
+
+<div class = "row">
+  <div class="col-lg-3 col-md-4 col-xs-6 thumb"
+    *ngFor="#show of shows"
+    (click)="gotoDetail(show)">
+      <div class="thumbnail">
+          <img class="img-responsive" src="{{show.image}}" alt="">
+      </div>
+      <div class="thumbnail-title">{{show.name}}</div>
+  </div>
+</div>
