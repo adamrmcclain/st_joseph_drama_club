@@ -18,4 +18,10 @@ getMember(id: number) {
       setTimeout(()=>resolve(CASTMEMBERS), 2000) // 2 seconds
     );
   }
+
+  getOfficers() {
+    return Promise.resolve(CASTMEMBERS).then(
+        members => members.filter(member => member.isOfficer === true)
+    );
+  }
 }

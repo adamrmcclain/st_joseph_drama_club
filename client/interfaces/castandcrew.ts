@@ -3,4 +3,6 @@ export interface CastAndCrew {
     name: string;
     image: string;
     description: string;
+    isOfficer: boolean;
+    officePosition: string;
 }

@@ -6,6 +6,7 @@ import {PastShowsComponent}   from '../components/pastshows/pastshows.component.
 import {CurrentShowComponent}     from '../components/currentshow/currentshow.component.ts';
 import {CastDetailComponent}  from '../components/castdetails/castdetails.component.ts';
 import {ShowDetailComponent} from '../components/showdetails/showdetails.component.ts';
+import {OfficerComponent} from '../components/officers/officers.component.ts';
 @Component(
     {
         selector: 'my-app',
@@ -34,6 +35,10 @@ import {ShowDetailComponent} from '../components/showdetails/showdetails.compone
     { path : '/showdetail/:id',
       name : 'ShowDetails',
       component: ShowDetailComponent
+    },
+    { path : '/officers',
+      name : 'Officers',
+      component: OfficerComponent
     }
   { path: '/',
     redirectTo: ['Home'] }

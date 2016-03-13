@@ -22,6 +22,11 @@ getCurrentShow() {
   return Promise.resolve(SHOWS).then(
   show => show.filter(show => show.isCurrent === true)[0]
 }
+
+isCurrentShowActive() {
+  return true;
+}
+
   // See the "Take it slow" appendix
   getShowsSlowly() {
     return new Promise<Show[]>(resolve =>
