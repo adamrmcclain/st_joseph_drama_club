@@ -11,6 +11,7 @@ import {OfficerComponent} from '../components/officers/officers.component.ts';
     {
         selector: 'my-app',
         templateUrl: `./app/route.html`,
+        styleUrls: ['static/css/index.css'],
         directives: [ROUTER_DIRECTIVES]
     }
 )
