@@ -1,0 +1,10 @@
+<div *ngIf="show" class="row">
+  <div class="row">
+    <div class="pull-left" style="font-size: 30px;">{{show.name}}</div>
+    <div [hidden]="!ticketsOnSale" class="pull-right">
+      <button  type="button" class="btn btn-primary">Buy Tickets Now!</button>
+    </div>
+  </div>
+  <img src="{{show.image}}" class="img-rounded col-md-10 col-md-offset-1" alt=""  />
+  <p class="col-sm-12"> {{show.description}} </p>
+</div>
