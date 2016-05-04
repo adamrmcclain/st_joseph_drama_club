@@ -56,6 +56,6 @@ public class CastAndCrew {
                 "{\"id\": 8, \"name\": \"Dr IQ\", \"image\": \"http://placehold.it/400x300\", \"description\": \"Description to be provided by cast member\", \"isOfficer\": false, \"officePosition\" : \"\"},\n" +
                 "{\"id\": 9, \"name\": \"Magma\", \"image\": \"http://placehold.it/400x300\", \"description\": \"Description to be provided by cast member\", \"isOfficer\": false, \"officePosition\" : \"\"},\n" +
                 "{\"id\": 10, \"name\": \"Tornado\", \"image\": \"http://placehold.it/400x300\", \"description\": \"Description to be provided by cast member\", \"isOfficer\": false, \"officePosition\" : \"\"}\n" +
-                "];\n";
+                "]";
     }
 }

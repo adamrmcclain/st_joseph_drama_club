@@ -11,12 +11,16 @@ import { CastDetailComponent } from '/component/castdetails/castdetails.componen
 })
 export class CastAndCrewComponent implements OnInit {
 
-members = null;
+  errorMessage = "";
+  members = null;
 
 constructor( private _router: Router, private _castService: CastService) { }
 
 getMembers() {
-    this._castService.getCastMembers().then(members => this.members = members);
+  this._castService.getCastMembers()
+                     .subscribe(members => this.members = members,
+                       error =>  this.errorMessage = <any>error);
+    //this._castService.getCastMembers().then(members => this.members = members);
   }
 
   ngOnInit() {
@@ -25,7 +29,6 @@ getMembers() {
 
   gotoDetail(member: Member) {
     let link = ['CastDetails', { id: member.id }];
-    console.log("Navigating to: " + link);
     this._router.navigate(link);
   }
 }

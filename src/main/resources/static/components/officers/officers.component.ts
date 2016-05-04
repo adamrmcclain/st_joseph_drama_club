@@ -12,11 +12,14 @@ import { CastDetailComponent } from '/component/castdetails/castdetails.componen
 export class OfficerComponent implements OnInit {
 
 members = null;
+errorMessage = "";
 
 constructor( private _router: Router, private _castService: CastService) { }
 
 getOfficers() {
-    this._castService.getOfficers().then(members => this.members = members);
+    this._castService.getCastMembers()
+      .subscribe(members => this.members = members.filter(member => member.isOfficer === true),
+      error =>  this.errorMessage = <any>error);
   }
 
   ngOnInit() {
