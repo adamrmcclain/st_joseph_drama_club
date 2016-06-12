@@ -33,9 +33,9 @@ public class Shows {
                 "  \"id\" : 3,\n" +
                 "  \"name\": \"Now you see it\",\n" +
                 "  \"image\": \"http://placehold.it/400x300\",\n" +
-                "  \"description\": \"A down on his luck magician keeps 'losing' his assistants.\";\n" +
+                "  \"description\": \"A down on his luck magician keeps 'losing' his assistants.\",\n" +
                 "  \"year\": \"2015\",\n" +
-                "  \"isCurrent\": false;\n" +
+                "  \"isCurrent\": false\n" +
                 "},\n" +
                 "{\n" +
                 "  \"id\" : 4,\n" +
@@ -52,7 +52,7 @@ public class Shows {
                 "  \"description\": \"Medical Dramedy\",\n" +
                 "  \"year\": \"2012\",\n" +
                 "  \"isCurrent\": false\n" +
-                "},\n" +
+                "}\n" +
                 "]";
     }
 }

@@ -10,15 +10,21 @@ import {CastService} from '/services/castandcrew/castandcrew.service.ts';
     providers: [CastService]
 })
 export class CastDetailComponent  implements OnInit {
-  member: CastAndCrew;
+  errorMessage = "";
+  member = null;
+
   constructor( private _routeParams: RouteParams
     , private _castService: CastService
   ) { }
 
+  getMember(id: number) {
+    this._castService.getCastMembers()
+      .subscribe(members => this.member = members.filter(member => member.id === id)[0],
+      error =>  this.errorMessage = <any>error);
+    }
 
   ngOnInit() {
     let id = +this._routeParams.get('id');
-    this._castService.getMember(id)
-      .then(member => this.member = member);
+    this.getMember(id);
   }
 }

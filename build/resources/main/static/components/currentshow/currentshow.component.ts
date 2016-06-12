@@ -13,10 +13,12 @@ export class CurrentShowComponent implements OnInit {
   constructor( private _showService: ShowService
   ) { }
 
+  getCurrent() {
+      this._showService.getAllShows()
+        .subscribe(shows => this.show = shows.filter(show => show.isCurrent === true)[0],
+        error =>  this.errorMessage = <any>error);
+    }
 
   ngOnInit() {
-    this._showService.getCurrentShow()
-      .then(show => this.show = show);
-
-    this._showService.isCurrentShowActive();
+    this.getCurrent();
   } }

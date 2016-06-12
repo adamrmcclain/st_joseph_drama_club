@@ -12,14 +12,19 @@ import {ShowService} from '/services/shows/shows.service.ts';
 })
 export class ShowDetailComponent  implements OnInit {
   show: Show;
+  errorMessage = null;
   constructor( private _routeParams: RouteParams
     , private _showService: ShowService
   ) { }
 
+getShow(id: number) {
+      this._showService.getAllShows()
+        .subscribe(shows => this.show = shows.filter(show => show.id === id)[0],
+        error =>  this.errorMessage = <any>error);
+}
 
   ngOnInit() {
     let id = +this._routeParams.get('id');
-    this._showService.getShow(id)
-      .then(show => this.show = show);
+    this.getShow(id);
   }
 }

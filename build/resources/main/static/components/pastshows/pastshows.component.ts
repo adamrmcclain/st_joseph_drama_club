@@ -11,11 +11,14 @@ import { ShowDetailComponent } from '/component/showdetails/showdetails.componen
 export class PastShowsComponent implements OnInit {
 
 shows = null;
+errorMessage = null;
 
 constructor( private _router: Router, private _showService: ShowService) { }
 
 getPastShows() {
-    this._showService.getPastShows().then(shows => this.shows = shows);
+    this._showService.getAllShows()
+      .subscribe(shows => this.shows = shows.filter(show => show.isCurrent === false),
+      error =>  this.errorMessage = <any>error);
   }
 
   ngOnInit() {

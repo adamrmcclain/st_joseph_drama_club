@@ -23,29 +23,18 @@ getMember(id: number) : Observable<CastAndCrew> {
   return cast.filter(member => member.id === id)[0];
 }
 
-  getOfficers() : Observable<CastAndCrew[]> {
-    let cast = this.http.get(this.castUrl)
-              .map(this.extractData)
-              .catch(this.handleError);
-    let members = null;
-    let errorMessage = "";
-    cast.subscribe(members => this.members = members,
-      error =>  this.errorMessage = <any>error);
-    return members.filter(member => member.isOfficer === true);
-  }
-
   private extractData(res: Response) {
     if (res.status < 200 || res.status >=300) {
       throw new Error('Bad response status: ' + res.stauts);
     }
     let body = res.json();
-    console.log(body);
+    (body);
     return body || {};
   }
 
   private handleError (error: any) {
     let errMsg = error.message || 'Server error';
-    console.log(errMsg);
+    (errMsg);
     return Observable.throw(errMsg);
   }
 
